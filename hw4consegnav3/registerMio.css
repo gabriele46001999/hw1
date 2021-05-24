@@ -1,0 +1,114 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+  background-image: url("images/sfondo.jpg");
+}
+
+form {
+  max-width: 1100px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+
+
+input[type="text"],input[type="password"],input[type="email"]
+{
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color:black;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 10px;
+}
+
+
+
+input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus{
+ background-color: lightblue;
+}
+
+
+
+.button {
+  cursor: pointer;
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0px;
+}
+
+/*METTO CHE OGNI LABEL E 120PX E FONT 30PX COSI SI VEDE ABBASTANZA GRANDE SE SU MOBILE*/
+@media (max-width: 500px) {
+label{
+  height: 120px;
+  font-size: 30px;
+  }
+}
+
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+form a{
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+.errore{
+  color:red;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+#Nome,#Cognome,#Username,#Password,#Email,#Accept,#IndirizzoError{
+  display: flex;
+}
+
+#NomeError p,#CognomeError p,#UsernameError p,#IndirizzoError p,#EmailError p,#PasswordError p,#AcceptError h3{
+	color:red;
+	margin:0px 0px 8px 0px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+}
+
+/*METTO IL FONT DI 30 PX COSI CHE SI VEDA ABBASTANZA BENE*/
+@media (max-width: 500px) {
+.errore,form a,#NomeError p,#CognomeError p,#UsernameError p,#IndirizzoError,#EmailError p,#PasswordError p,#AcceptError h3,input[type="text"],input[type="password"],input[type="email"]{
+  font-size: 30px;
+  }
+}

@@ -1,0 +1,383 @@
+body {
+  margin: 0px;
+  background-color:white;
+}
+
+header {
+  height:500px;
+  width: 100%;
+  background-image: url("images/banner4.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  line-height: 1.2;
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+}
+
+
+#overlay {
+  background-color:rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom:0;
+  right: 0;
+}
+
+
+@media (max-width: 500px) {
+  header {
+    height: 50%;
+    line-height: 1.5;
+  }
+}
+
+
+header nav {
+  height: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+@media (max-width: 500px) {
+  header nav {
+     justify-content: space-between;
+  }
+}
+
+
+
+
+#logo {
+  font-size: 30px;
+  text-align: left;
+  font-family: 'Dancing Script', cursive;
+}
+
+
+@media (max-width: 500px) {
+	#logo {
+	  font-size: 1.5em;
+	}
+}
+
+
+.flex-itemnav{
+  margin-left:50px;
+  margin-right:50px;
+}
+
+.flex-itemnav a {
+  color:white;
+  padding: 2.5px 20px 2.5px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+.flex-itemnav a:hover{
+  background-color: #ffffff;
+  color:#000000;
+}
+
+
+header h1{
+  z-index: 1;
+  font-family: Helvetica, sans-serif;
+  font-size: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 23px;
+  margin-bottom: 23px;
+}
+
+@media (max-width: 500px) {
+  header h1{
+    font-size: 20px;
+    margin-top: 220px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+
+.button{
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: bold 15px Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  color: white;
+  z-index: 1;
+  border-radius: .4rem;
+  border:2px solid white;
+  padding: 1.2rem 2rem;
+}
+
+.button:hover{
+    background-color:rgba(211,211,211,0.8);
+}
+
+
+#menu{
+  display: none;
+}
+
+
+
+#menu .linemobile{
+  width: 25px;
+  height: 3px;
+  background-color:white;
+  margin:2.5px 2.5px 2.5px 2.5px;
+}
+
+
+.linkmobile{
+display: none;
+}
+
+
+
+
+@media(max-width:500px){
+.flex-itemnav{
+    display: none;
+  }
+  #menu{
+    display: block;
+    margin-right:30px;
+  }
+ .linkmobile{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top:120px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-right: -20px;
+  }
+
+
+  .linkmobile a,.linkmobile span{
+    color:white;
+    padding: 2.5px 20px 2.5px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .linkmobile a:hover,.linkmobile span:hover{
+    background-color: #ffffff;
+    color:#000000;
+  }
+}
+/*FIN QUA CODICE HEADER*/
+
+
+
+
+#paragrafer{
+display: flex;
+height: 28%;
+margin-top: 10px;
+margin-bottom: 10px;
+width: 100%;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color:black;
+line-height: 1;
+font-weight: bold;
+font-family: 'Montserrat', sans-serif;
+font-style: italic;
+font-size: 25px;
+}
+
+
+#paragrafer h1{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+
+@media (max-width: 500px) {
+	#paragrafer h1 {
+	  font-size: 20px;
+	}
+}
+
+
+#paragrafer p{
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 500px) {
+	#paragrafer p {
+	  padding-left:40px;
+	}
+}
+
+
+
+section{
+  height: 500px;
+  width: 100%;
+  margin-top:40px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  line-height: 1.1;
+  font-size: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+/*MOBILE*/
+@media (max-width: 500px) {
+	section{
+    flex-direction: column;
+    height: 1500;
+	}
+}
+
+
+.flex-itemsection{
+  width:28%;
+  height:96%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+  text-align: left;
+}
+
+
+/* SU MOBILE*/
+@media (max-width: 500px) {
+	.flex-itemsection{
+     width: 80%;
+     height: 30%;
+     align-items: center;
+     justify-content: center;
+	}
+}
+
+
+.flex-itemsection img{
+  width: 100%;
+}
+
+
+
+.flex-itemsection h1,.flex-itemsection p{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color:black;
+  padding-left: 5px;
+}
+
+
+.flex-itemsection p{
+     font-family: 'Montserrat', sans-serif;
+     font-weight: normal;
+  }
+
+
+  .flex-itemsection .button{
+    border:0px;
+    background-color: #6affe4;
+    color: black;
+    }
+
+  .flex-itemsection .button:hover{
+          background-color:rgba(102,248,221,0.9);
+    }
+
+
+  @media (max-width: 500px) {
+    .button{
+      height: 30px;
+      font-size: 15px;
+      border-radius: .2rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+
+
+    /*CODICE FOOTER*/
+    footer{
+      display: flex;   /*FLEX CONTAINER*/
+      flex-direction: row;     /*ELEMENTI DISPOSTI PER COLONNA COSI UNO SOTTO L'ALTRO*/
+      justify-content:space-around;
+      width: 100%;          /*LARGHEZZA 100% DELLA VIEW*/
+      background-color: rgb(70,70,70);  /*CAMBIO COLORE DI SFONDO*/
+      line-height: 1.2;
+      font-weight: bold;  /*GRASETTO*/
+      font-size: 20px;
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+    }
+
+    footer #logo{
+      color:white;
+      padding-left: 20px;
+      font-size: 20px;
+      text-align: left;
+      font-family: 'Dancing Script', cursive;
+    }
+
+
+
+    footer #logo h1{
+      margin: 0px;
+    }
+
+
+    @media(max-width:500px){
+      footer #logo{
+        margin-left: 20px;
+      }
+    }
+
+
+    footer p{
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color:white;
+    }
+
+    .hidden{
+      display: none;
+    }
