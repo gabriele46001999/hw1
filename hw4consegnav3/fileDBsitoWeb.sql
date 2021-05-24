@@ -2,15 +2,11 @@
 CREATE DATABASE sitowebO46001999;
 use sitowebO46001999 ;
 
-//CREAZIONE TABELLA PRODOTTO//
+
 CREATE TABLE prodotto(id_prodotto varchar(5)  not null PRIMARY KEY,tipologia varchar(40)  not null,titolo varchar(100)  not null,descrizione varchar(300)  not null,immagine varchar(100)  not null,prezzo double  not null,numbervideo int  not null,quantita int  not null);
-//CREAZIONE TABELLA UTENTE//
 CREATE TABLE utente(username varchar(40)  not null PRIMARY KEY,password varchar(255)  not null,nome varchar(40)  not null,cognome varchar(40)  not null,email varchar(40)  not null,indirizzo varchar(40)  not null);
-//CREAZIONE TABELLA PREFERITI//
 CREATE TABLE preferiti(username varchar(40)  not null,id_prodotto varchar(5)  not null,PRIMARY KEY(username,id_prodotto),FOREIGN KEY (username) REFERENCES utente(username),FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto));
-//CREAZIONE TABELLA COOKIE//
 CREATE TABLE cookies(id int  not null AUTO_INCREMENT PRIMARY KEY,username varchar(40)  not null,hash varchar(255)  not null,expires bigint  not null,FOREIGN KEY(username) REFERENCES utente(username));
-//CREAZIONE TABELLA CARRELLO//
 CREATE TABLE carrello(username varchar(40)  not null,id_prodotto varchar(5)  not null,quantita int  not null,Acquistato tinyint  not null ,PRIMARY KEY(username,id_prodotto),FOREIGN KEY (username) REFERENCES utente(username),FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto));
 
 
@@ -19,7 +15,7 @@ CREATE TABLE carrello(username varchar(40)  not null,id_prodotto varchar(5)  not
 //INSERIMENTO SMARTPHONE//
 INSERT INTO prodotto(id_prodotto,tipologia,titolo,descrizione,immagine,prezzo,numbervideo,quantita)VALUES("S1","Smartphone","samsung S21","Samsung Galaxy S21 è uno smartphone Android avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 6.2 pollici con una risoluzione di 2400x1080 pixel. Le funzionalità offerte da questo smartphone sono molteplici","images/samsungS21.jpg",700.00,1,30);
 
-INSERT INTO prodotto(id_prodotto,tipologia,titolo,descrizione,immagine,prezzo,numbervideo,quantita)VALUES("S2","Smartphone","asus Zenfone7","Asus Zenfone  è uno smartphone molto completa,con Sistema operativo incluso Android 10.0, Famiglia processore Qualcomm Snapdragon ,Modello del processore 865,Dimensioni schermo 6.67,Capacità memoria interna 128  GB Bluetooth Sì,connessione internet 4G","images/asusZenfone7.jpg",500.00,1,25);
+INSERT INTO prodotto(id_prodotto,tipologia,titolo,descrizione,immagine,prezzo,numbervideo,quantita)VALUES("S2","Smartphone","asus Zenfone7","Asus Zenfone  è uno smartphone molto completa,con Sistema operativo incluso Android 10.0, Famiglia processore Qualcomm Snapdragon ,Modello del processore 865,Dimensioni schermo 6.67,Capacità memoria interna 128  GB Bluetooth Sì,connessione internet 4G","images/asusZenfone7.jpg",500.00,0,25);
 
 
 INSERT INTO prodotto(id_prodotto,tipologia,titolo,descrizione,immagine,prezzo,numbervideo,quantita)VALUES("S3","Smartphone","xiaomi Mi10T","Mi 10T vanta un sensore AI da 64MP, la capacità di catturare scatti panoramici ultra-wide-angle e le modalità ritratto e macro.Mi 10T vi porta nel 5G grazie al processore Qualcomm Snapdragon 865 e la sua CPU Octa-Core.Mi 10T monta un DotDisplay FHD+ da 6.67 con TrueColor","images/xiaomi Mi 10T.jpg",340.00,10,35);
@@ -93,23 +89,6 @@ INSERT INTO prodotto(id_prodotto,tipologia,titolo,descrizione,immagine,prezzo,nu
 
 INSERT INTO prodotto(id_prodotto,tipologia,titolo,descrizione,immagine,prezzo,numbervideo,quantita)VALUES("A9","Accessori","Airpods","Apple AirPods con custodia di ricarica wireless (seconda generazione),Taglia unica, comodi da indossare tutto il giorno La custodia si ricarica in wireless,sia tramite connettore lightning","images/Airpods.jpg",185.00,1,25);
 
-//TRIGGERS//
-
-CREATE TRIGGER AGG_Quantita AFTER DELETE ON carrello
- FOR EACH ROW 
- BEGIN 
- IF old.Acquistato=1 THEN
- UPDATE prodotto
- SET prodotto.quantita=prodotto.quantita-old.quantita
- WHERE prodotto.id_prodotto=old.id_prodotto; 
- END IF;
- END // 
- DELIMITER ;
- 
- 
- 
-  
-    
   //TRIGGERS SE SI LAVORA DA CMD COPIARE UNA RIGA ALLA VOLTA PER EVITARE PROBLEMI//  
     
 DELIMITER //
